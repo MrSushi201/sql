@@ -1,2 +1,2 @@
 # ABOUT
-This folder contains my study materials for subject: SQL
+This repository contains my study materials for subject: SQL
