@@ -10,3 +10,15 @@
 -- NOTE2: You need to use ALIAS for creating age_sum
 SELECT SUM(age) AS age_sum
 FROM people;
+
+--# For this challenge you need to create a simple DISTINCT statement, you want to find all the unique ages.
+--# people table schema
+--#     id
+--#     name
+--#     age
+--# select table schema
+--# age (distinct)
+
+--# NOTE: Your solution should use pure SQL. Ruby is used within the test cases to do the actual testing.
+SELECT DISTINCT(age)
+FROM people;
