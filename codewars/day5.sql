@@ -7,3 +7,5 @@
 --# Write your SQL statement here: 
 --# You are given a table 'nospace' with column 'x'.
 --# Return a table with column 'x' and your result in a column named 'res'.
+SELECT x, REPLACE(x, ' ', '') AS res
+FROM nospace;
