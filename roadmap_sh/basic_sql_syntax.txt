@@ -55,3 +55,65 @@ Example:
 The DROP TABLE statement is used to drop an existing table in a database. 
 Example:
     DROP TABLE table1;
+--------------------
+
+Data Types in SQL
+
+SQL data types define the type of data that can be stored in a database table's column.
+Depending on the DBMS (Database Management System), the names of the data types can differ slightly. 
+Below are the general types:
+* INT:
+    INT is used for whole numbers. 
+* DECIMAL:
+    DECIMAL is used for decimal and fractional numbers.
+* CHAR:
+    CHAR is used for fixed-length strings.
+* VARCHAR:
+    VARCHAR is used for variable-length strings.
+* DATE:
+    DATE is used for dates in the format YYYY-MM-DD.
+* DATETIME:
+    DATETIME is used for date and time values in the format YYYY-MM-DD HH:MM:SS.
+* BINARY:
+    BINARY is used for binary strings. 
+* BOOLEAN:
+    BOOLEAN is used for boolean values (TRUE or FALSE). 
+
+Example:
+CREATE TABLE table (
+    Id INT,
+    Name VARCHAR(50),
+    Initial CHAR(1),
+    Price DECIMAL(5, 2),
+    BirthDate DATE,
+    OrderDate DATETIME,
+)
+--------------------
+
+Operators in SQL
+
+SQL operators are used to perform operations like comparisons and arithmetic calculations.
+They are very crucial in forming queries. SQL operators are divided into the following types:
+* Arithmetic operators - Used to perform mathematical operations:
+    +, -, *, /, %
+* Comparison operators - Used in the WHERE clause to compare one expression with another:
+    =, !=/<>, >, <, >=, <=
+* Logical operators - Used to combine the result set of two different component condition:
+    AND, OR, NOT
+* Bitwise operators - Used to perform bit-level operations on the inputs: 
+    &, |, ^
+Examples:
+    SELECT product, price, (price * 0.18) as tax
+    FROM product_table;
+
+    SELECT name, age
+    FROM student_table
+    WHERE age > 18;
+
+    SELECT *
+    FROM employee_table
+    WHERE salary > 50000
+    AND age < 30;
+--------------------
+
+Statements in SQL
