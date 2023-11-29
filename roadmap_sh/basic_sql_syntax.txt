@@ -1,0 +1,57 @@
+Basic SQL Syntax
+
+SQL, or Structured Query Language, uses a specific set of commands to interact with a database. 
+It includes the use of keyword-like statements to accomplish several tasks.
+The tasks can be creating, deleting, or modifying tables, retrieving, inserting, or modifying data. 
+
+The SELECT statement is used to retrieve data from a database. 
+The data returned is stored in a result table, called the result-set. 
+Example:
+    SELECT column1, column2
+    FROM table1;
+
+The INSERT statement is used to insert new rows of data in a table. 
+Example:
+    INSERT INTO table1 
+    (column1, column2, ..., columnN)
+    VALUES
+    (value1, value2, ..., valueN);
+
+The UPDATE statement is used to modify existing records in a table. 
+Example:
+    UPDATE table1
+    SET column1 = value1, column2 = value2
+    WHERE condition;
+
+The DELETE statement is used to remove records from a table. 
+Example:
+    DELETE FROM table1
+    WHERE condition;
+
+The CREATE TABLE statement is used to create a new table in a database.
+Example:
+    CREATE TABLE table1 (
+        column1 DATATYPE CONSTRAINT,
+        column2 DATATYPE CONSTRAINT,
+        ...,
+        columnN DATATYPE CONSTRAINT
+    );
+
+The ALTER TABLE statement is used to add, delete/drop or modify columns in the existing table. 
+It is also used to add and drop constraints on the existing table. 
+Example:
+    --# To add a column
+    ALTER TABLE table1
+    ADD column_name DATATYPE;
+
+    --# To delete/drop a column
+    ALTER TABLE table1
+    DROP COLUMN column_name;
+
+    --# To modify existing column
+    ALTER TABLE table1
+    MODIFY COLUMN column_name DATATYPE;
+
+The DROP TABLE statement is used to drop an existing table in a database. 
+Example:
+    DROP TABLE table1;
