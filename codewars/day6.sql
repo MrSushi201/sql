@@ -15,3 +15,12 @@
 SELECT name, country
 FROM travelers
 WHERE country NOT IN ('Canada', 'Mexico', 'USA');
+
+--# Easy SQL: Rounding Decimals
+--# Given the following table 'decimals':
+--#     id
+--#     number1
+--#     number2
+--# Return a table with two columns (number1, number2), the value in number1 should be rounded down and the value in number2 should be rounded up.
+SELECT FLOOR(number1) as number1, CEILING(number2) as number2
+FROM decimals;
