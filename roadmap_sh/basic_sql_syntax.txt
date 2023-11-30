@@ -117,3 +117,58 @@ Examples:
 --------------------
 
 Statements in SQL
+SELECT statement
+    The SELECT statement is used in SQL to pick out specific data from a database.
+    In other words, it is used to select from the database what you would like to display.
+    Example:
+        SELECT column(s)
+        FROM table
+        WHERE condition;
+    You can filter using WHERE clause, where a condition is used to filter the result-set. 
+    You can also sort the results using the ORDER BY keyword:
+        SELECT *
+        FROM table
+        ORDER BY column1; --# By default, the output is in ascending order. You can add DESC keyword to reverse the sorting.
+
+INSERT statement
+    The INSERT statement in SQL is used to add new records of data to a table in the database. 
+    THERE are three forms of the INSERT statements:
+        1. INSERT INTO VALUES
+        2. INSERT INTO SET
+        3. INSERT INTO SELECT
+
+    INSERT INTO VALUES - The basic syntax for INSERT INTO VALUES:
+        INSERT INTO table_name
+        (column1, column2, ..., columnN)
+        VALUES 
+        (value1, value2, ..., valueN);
+    This form of the INSERT statement specifies both the column names and the values to be inserted. 
+    
+    INSERT INTO SELECT - The syntax is used to copy data from one table and insert it into another table.
+        INSERT INTO table_name1
+        (column1, column2, ..., columnN)
+        SELECT column1, column2, ..., columnN
+        FROM table_name2
+        WHERE condition;
+
+UPDATE statement
+    The SQL UPDATE statement is used to modify the existing data in a database.
+    This statement is very useful when you need to change the values assigned to specific fields in an existing row or set of rows. 
+    The general syntaxfor the UPDATE statement:
+        UPDATE table
+        SET
+        column1 = value1,
+        column2 = value2,
+        ...
+        columnN = valueN
+        WHERE condition;
+
+DELETE statement
+    The DELETE statement in SQL helps you remove existing records from a database.
+    However, keep in mid, it is a destructive operation and may permanently erase data from your database.
+    With the DELETE statement, you can perform:
+        Delete All Rows
+            DELETE FROM table;
+        Delete Specific Rows
+            DELETE FROM table
+            WHERE condition;
