@@ -1,0 +1,118 @@
+Data Definition Language
+
+Data Definition Language (DDL) is a subset of SQL. 
+Its primary function is to CREATE, MODIFY, and DELETE database structure but not data.
+The commands are:
+    CREATE - Used to create the database or its objects like table, index, function, views, store procedure, and triggers.
+    Example:
+        CREATE TABLE table_name (
+            column1 DATATYPE(size),
+            column2 DATATYPE(size),
+            ...
+            columnN DATATYPE (size)
+        );
+
+    DROP - Used to delete an existing database or table. 
+    Example:
+        DROP TABLE table_name;
+
+    ALTER - Used to alter the structure of the database. It is used to ADD, DELETE/DROP or MODIFY columns in an existing table.
+    Examples:
+        ALTER TABLE table_name
+        ADD column_name DATATYPE;
+
+        ALTER TABLE table_name
+        DROP COLUMN column_name;
+
+        ALTER TABLE table_name
+        MODIFY COLUMN column_name DATATYPE(size);
+
+    TRUNCATE - Used to remove all records from a table, including spaces allocated for the records which are removed. 
+    Example:
+        TRUNCATE TABLE table_name;
+
+    RENAME - Used to rename an object in the database.
+    Example:
+        RENAME TABLE old_table_name 
+        TO new_table_name;
+
+Create Table
+The CREATE TABLE statement in SQL is a DDL command used to create a new table in the database. 
+The syntax for SQL CREATE TABLE is as follows:
+Examples:
+    CREATE TABLE table_name (
+        column1 DATATYPE,
+        column2 DATATYPE,
+        ...
+        columnN DATATYPE
+    );
+
+    CREATE TABLE Employees (
+        Id INT,
+        Name VARCHAR(255),
+        Salary INT,
+        Department VARCHAR(255),
+        Position VARCHAR(255)
+    );
+
+    CREATE TABLE Employees (
+        Id INT NOT NULL,
+        Name VARCHAR(255) NOT NULL,
+        Salary INT,
+        Department VARCHAR(255),
+        Position VARCHAR(255)
+    );
+
+Alter Table
+The ALTER TABLE statement is used to ADD, DELETE/DROP, or MODIFY columns in an existing table.
+It is also useful for adding and dropping constraints such as Primary Key, Foreign Key, et cetera.
+Examples:
+    ALTER TABLE table_name
+    ADD column_name DATATYPE;
+
+    ALTER TABLE table_name
+    ADD (
+        (column_name1 DATATYPE),
+        (column_name2 DATATYPE),
+        ...
+        (column_nameN DATATYPE)
+    );
+
+    ALTER TABLE table_name
+    DROP COLUMN column_name;
+
+    ALTER TABLE table_name
+    DROP (
+        column_name1,
+        column_name2,
+        ...
+        column_nameN
+    );
+
+    ALTER TABLE table_name
+    ALTER COLUMN column_name TYPE DATATYPE;
+
+    ALTER TABLE table_name
+    ADD CONSTRAINT constraint_name
+    PRIMARY KEY (column_name1, column_name2, ..., column_nameN);
+
+    ALTER TABLE table_name
+    DROP CONSTRAINT constraint_name;
+
+Truncate Table
+The TRUNCATE TABLE statement is a DDL operation that is used to mark the extents of a table for deallocation (empty for reuse).
+The result of this operation quickly removes all data from a table.
+Typically bypassing a number of integrity enforcing mechanisms intended to protect data (like triggers).
+It effectively eliminates all records in a table, but not the table itself. 
+Unlike the DELETE statement, TRUNCATE TABLE does not generate individual row delete statement.
+So, the usual overhead for logging or locking does not apply. 
+Examples:
+    TRUNCATE TABLE table_name;
+Limitations
+Truncate preserves the structure of the table for future use. But you cannot truncate a table that:
+    Is references by a FOREIGN KEY constraint (you can truncate a table that has a foreign key that references itself.)
+    Participates in an indexed view. 
+    Is published by using transactional replication or merge replication.
+For partitioned tables, TRUNCATE TABLE removes all rows from all partitions.
+The operation is not allowed if the table contains any LOB columns - VARCHAR(max), NVARCHAR(max), VARBINARY(max), TEXT, NTEXT, IMAGE, XML.
+Or if the table contains any filestream columns or spatial geo, geography, geometry, and hierarchyid data type columns, or any columns of CLR user-defined data types. 
