@@ -1,1 +1,20 @@
 Data Manipulation Language
+
+Data Manipulation Language, or DML in short, is a subcategory of SQL.
+The purpose of DML is to insert, retrieve, update and delete data from the database.
+DML contains 4 commands which are:
+1. INSERT INTO - This command is used to insert new records into a table.
+    Example: INSERT INTO table_name
+             (column1, column2, ..., columnN)
+             VALUES
+             (value1, value2, ..., valueN)
+2. SELECT - This command is used to select data from a database. The returned data is stored in a result table, called the result-set. 
+    Example: SELECT column1, column2, ..., columnN
+             FROM table_name;
+3. UPDATE - This command is used to modify the existing rows in a table. 
+    Example: UPDATE table_name
+             SET column1 = value1, column2 = value2, ..., columnN = valueN
+             WHERE condition;
+4. DELETE FROM - This command is used to delete existing records from a table. 
+    Example: DELETE FROM table_name
+             WHERE condition;
