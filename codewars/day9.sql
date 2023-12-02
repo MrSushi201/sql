@@ -15,3 +15,16 @@ CASE
     ELSE (n * (n + 1) / 2)
 END AS res
 FROM sumtriangular;
+
+--# Collect Tuition (SQL for Beginners #4)
+--# Table: students
+--#     name TEXT
+--#     age INT
+--#     semester INT
+--#     mentor TEXT
+--#     tuition_received BOOLEAN
+--# Write a SELECT statement to get a list of all students who have not paid their tuition yet.
+--# The list should include all the data available about these students.
+SELECT *
+FROM students
+WHERE tuition_received = False;s
