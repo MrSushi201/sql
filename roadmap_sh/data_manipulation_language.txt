@@ -18,3 +18,62 @@ DML contains 4 commands which are:
 4. DELETE FROM - This command is used to delete existing records from a table. 
     Example: DELETE FROM table_name
              WHERE condition;
+--------------------
+
+More about SELECT
+
+The SELECT statement in SQL is majorly used for fetching data from the database.
+It is one of the most essential elements of SQL. 
+Syntax Examples:
+    SELECT column1, column2, ..., columnN
+    FROM table;
+
+    SELECT *
+    FROM table;
+
+    # SELECT DISTINCT is used to return only distinct (different) values. 
+    SELECT DISTINCT(column1), column2, ..., columnN
+    FROM table;
+
+    # SELECT WHERE is used to filter records based on a condition.
+    SELECT column1, column2, ..., columnN
+    FROM table
+    WHERE condition;
+
+    # SELECT ORDER BY is used for sorting the result-set in ascending or descending order.
+    SELECT column1, column2, ..., columnN
+    FROM table
+    ORDER BY column_name ASC|DESC;
+--------------------
+
+The FROM clause
+
+The FROM clause in SQL specifies the tables from which the retrieval should be made. 
+The FROM clause can also be used to join tables as well. 
+Syntax Examples:
+    # Simple usage
+    SELECT column1, ..., columnN
+    FROM table;
+
+    # FROM with multiple tables
+    SELECT table1.column1, table2.column1
+    FROM table1, table2
+    WHERE table1.key_column = table2.key_column;
+
+    # FROM with Aliases
+    SELECT a.column1, b.column2
+    FROM table_1 AS a, table_2 AS b
+    WHERE a.key_column = b.key_column;
+NOTE: FROM is not limited only to SELECT. It is applicable to UPDATE and DELETE operations as well. 
+--------------------
+
+The WHERE clause
+SQL provided a WHERE clause that is used to filter the records. 
+You should use the WHERE clause to filter the records and fetching only the necessary records.
+Syntax Examples:
+    # Synstax structure
+    SELECT column1, ..., columnN
+    FROM table_name
+    WHERE condition;
+--------------------
+
