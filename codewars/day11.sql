@@ -15,3 +15,9 @@
 --# Return a table with column 'dna' and the result in 'res'
 SELECT dna, TRANSLATE(dna, 'ATCG', 'TAGC') AS res
 FROM dnastrand;
+
+--# Beginner Series #2 Clocl
+--# Clock shows 'h' hours, 'm' minues, and 's' seconds after midnight.
+--# Your task is to write a function which returns the time since midnight in milliseconds. 
+SELECT h * 60 * 60 * 1000 + m * 60 * 1000 + s * 1000 AS res
+FROM past;
