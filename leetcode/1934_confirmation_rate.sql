@@ -51,7 +51,8 @@ ON s.user_id = c.user_id
 GROUP BY s.user_id;
 
 -- Alternative SQL
-SELECT s.user_id, 
+SELECT 
+    s.user_id, 
     ROUND(
         AVG(
             IF(c.action = "confirmed", 1, 0)
